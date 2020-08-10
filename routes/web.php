@@ -49,9 +49,10 @@ Route::get('/admin/tambahuser', function () {
 
 
 Route::get('/admin/permohonan', 'Admin\PermohonanController@index');
-Route::get('/admin/permohonan/{id}', 'Admin\PemohonController@detail');
+Route::get('/admin/permohonan/{id}', 'Admin\PermohonanController@detail');
 Route::get('/admin/tambahpermohonan', 'Admin\PermohonanController@addForm');
 Route::post('/admin/permohonan/store', 'Admin\PermohonanController@add');
+Route::post('/admin/permohonan/patchukur', 'Admin\PermohonanController@patchUkur');
 
 Route::get('/admin/detailpermohonan', function () {
     return view('admin.permohonan.detailpermohonan');

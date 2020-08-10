@@ -49,4 +49,21 @@ class PermohonanController extends CustomController
         $this->insert(Permohonan::class, $data);
         return redirect()->back()->with(['success' => 'Success']);
     }
+
+    public function detail($id)
+    {
+        $permohonan = Permohonan::with(['pemohon'])->where('id', $id)->firstOrFail();
+        return view('admin.permohonan.detailpermohonan')->with(['permohonan' => $permohonan]);
+    }
+
+    public function patchUkur()
+    {
+        $data = [
+            'luas_ukur' => $this->postField('luasukur'),
+            'tgl_ukur' => $this->postField('tgl_ukur'),
+            'status' => '1',
+        ];
+        $this->update(Permohonan::class, $data);
+        return redirect()->back()->with(['success' => 'Success']);
+    }
 }

@@ -63,7 +63,7 @@
                                     <td>{{ $v->hak_milik}}</td>
                                     <td><a href="{{ asset('/uploads/permohonan') }}/{{ $v->url }}">{{ $v->url}}</a></td>
                                     <td>
-                                        <a href="/admin/detailpermohonan" class="btn btn-sm btn-primary">Detail</a>
+                                        <a href="/admin/permohonan/{{ $v->id }}" class="btn btn-sm btn-primary">Detail</a>
                                     </td>
                                 </tr>
                             @endforeach
