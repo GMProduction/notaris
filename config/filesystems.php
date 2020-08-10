@@ -54,7 +54,30 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
-
+        'ktp' => [
+            'driver' => 'local',
+            'root' => public_path() . '/uploads/ktp',
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
+        'kk' => [
+            'driver' => 'local',
+            'root' => public_path() . '/uploads/kk',
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
+        'npwp' => [
+            'driver' => 'local',
+            'root' => public_path() . '/uploads/npwp',
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
+        'permohonan' => [
+            'driver' => 'local',
+            'root' => public_path() . '/uploads/permohonan',
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

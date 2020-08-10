@@ -50,6 +50,7 @@
                                             <label for="namapemohon">Nama Pemohon</label>
                                             <input type="text" id="namapemohon" name="namapemohon"
                                                    readonly
+                                                   value="{{ $pemohon->nama }}"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -59,6 +60,7 @@
                                             <label for="ktp">KTP</label>
                                             <input type="text" id="ktp" name="ktp"
                                                    readonly
+                                                   value="{{ $pemohon->ktp }}"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -68,6 +70,7 @@
                                             <label for="kk">KK</label>
                                             <input type="text" id="kk" name="kk"
                                                    readonly
+                                                   value="{{ $pemohon->kk }}"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -77,6 +80,7 @@
                                             <label for="npwp">NPWP</label>
                                             <input type="text" id="npwp" name="npwp"
                                                    readonly
+                                                   value="{{ $pemohon->npwp }}"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -86,6 +90,7 @@
                                             <label for="sppt">SPPT</label>
                                             <input type="text" id="sppt" name="sppt"
                                                    readonly
+                                                   value="{{ $pemohon->sppt }}"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -95,6 +100,7 @@
                                             <label for="noc">No. C</label>
                                             <input type="text" id="noc" name="noc"
                                                    readonly
+                                                   value="{{ $pemohon->no_c }}"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -104,6 +110,7 @@
                                             <label for="saksi">Saksi saksi</label>
                                             <input type="text" id="saksi" name="saksi"
                                                    readonly
+                                                   value="{{ $pemohon->saksi }}"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -117,16 +124,16 @@
                                 <div class="col-lg-6">
                                     <a>Foto KTP</a>
                                     <div class="card">
-                                        <a style="width: 300px" href="{{asset('assets/img/theme/ktp.jpeg')}}"><img
-                                                src="{{asset('assets/img/theme/ktp.jpeg')}}"
+                                        <a style="width: 300px" href="{{asset('/uploads/ktp')}}/{{$pemohon->url_ktp }}"><img
+                                                src="{{asset('/uploads/ktp')}}/{{$pemohon->url_ktp }}"
                                                 style="width: 300px"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <a>Foto NPWP</a>
                                     <div class="card">
-                                        <a style="width: 300px" href="{{asset('assets/img/theme/npwp.jpg')}}"><img
-                                                src="{{asset('assets/img/theme/npwp.jpg')}}"
+                                        <a style="width: 300px" href="{{asset('/uploads/npwp')}}/{{$pemohon->url_npwp }}"><img
+                                                src="{{asset('/uploads/npwp')}}/{{$pemohon->url_npwp }}"
                                                 style="width: 300px"></a>
                                     </div>
                                 </div>
@@ -135,8 +142,8 @@
                                     <div class="col-lg-12">
                                         <a>Foto KK</a>
                                         <div class="card">
-                                            <a style="width: 600px" href="{{asset('assets/img/theme/kk.jpg')}}"><img
-                                                    src="{{asset('assets/img/theme/kk.jpg')}}"
+                                            <a style="width: 600px" href="{{asset('/uploads/kk')}}/{{$pemohon->url_kk }}"><img
+                                                    src="{{asset('/uploads/kk')}}/{{$pemohon->url_kk }}"
                                                     style="width: 600px"></a>
                                         </div>
                                     </div>
