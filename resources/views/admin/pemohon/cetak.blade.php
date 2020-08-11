@@ -45,26 +45,29 @@
         <label for="exampleInputEmail1">Data Pemohon</label>
         <div readonly class="form-control" id="exampleInputEmail1" style="height: 190px">
             <p style="margin-bottom: 0">Nama Pemohon :
-                {{--                {{$kasus->jadwal->pemohon->pemohon->nama_pemohon}}--}}
+                                {{$p->nama}}
+            </p>
+            <p style="margin-bottom: 0">No. Telp :
+                {{$p->no_telp}}
             </p>
             <p style="margin-bottom: 0">No. KTP :
-                {{--                {{$kasus->jadwal->pemohon->pemohon->no_identitas}}--}}
+                {{$p->ktp}}
             </p>
             <p style="margin-bottom: 0">No. KK :
-                {{--                {{$kasus->jadwal->pemohon->pemohon->pekerjaan}}--}}
+                {{$p->kk}}
             </p>
             <p style="margin-bottom: 0">No. NPWP :
-                {{--                {{$kasus->jadwal->pemohon->pemohon->no_telepon}}--}}
+                {{$p->npwp}}
             </p>
             <p style="margin-bottom: 0">
                 SPPT :
-                {{--                {{$kasus->jadwal->pemohon->pemohon->tempat_lahir}}, {{$kasus->jadwal->pemohon->pemohon->tanggal_lahir}}--}}
+                {{$p->sppt}}
             </p>
             <p style="margin-bottom: 0">NO. C :
-                {{--                {{$kasus->jadwal->pemohon->pemohon->email}}--}}
+                {{$p->no_c}}
             </p>
             <p style="margin-bottom: 0">Saksi - Saksi :
-                {{--                {{$kasus->jadwal->pemohon->pemohon->alamat}--}}
+                {{$p->saksi}}
             </p>
 
         </div>
@@ -77,19 +80,19 @@
     <p for="exampleInputEmail1">KTP</p>
 
     <img
-        src="assets/img/theme/ktp.jpeg"
+        src="uploads/ktp/{{$p->url_ktp}}"
         style="width: 200px">
 
     <p for="exampleInputEmail1">NPWP</p>
 
     <img
-        src="assets/img/theme/npwp.jpg"
+        src="uploads/npwp/{{$p->url_npwp}}"
         style="width: 200px">
 
     <p for="exampleInputEmail1">KK</p>
 
     <img
-        src="assets/img/theme/kk.jpg"
+        src="uploads/kk/{{$p->url_kk}}"
         style="width: 200px">
 
 
@@ -102,7 +105,7 @@
 <div style="left:10px;width: 300px; margin-left : 100px;display: inline-block">
     <p class="text-center mb-5">Admin</p>
     <p class="text-center">(
-        {{--                {{auth()->user()->username}}--}}
+                        {{auth()->user()->username}}
         )</p>
 </div>
 
@@ -110,7 +113,7 @@
 <footer class="footer">
     @php $date = new DateTime("now", new DateTimeZone('Asia/Bangkok') ); @endphp
     <p class="text-right small mb-0 mt-0 pt-0 pb-0"> di cetak oleh :
-        {{--                {{auth()->user()->username}}--}}
+                        {{auth()->user()->username}}
     </p>
     <p class="text-right small mb-0 mt-0 pt-0 pb-0"> tgl: {{ $date->format('d F Y, H:i:s') }} </p>
 </footer>

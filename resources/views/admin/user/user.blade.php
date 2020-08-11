@@ -44,28 +44,16 @@
                             </tr>
                             </thead>
                             <tbody class="list">
-{{--                            @foreach($users as $v)--}}
+                            @foreach($user as $v)
                                 <tr>
-                                    <td>1</td>
-                                    <td>nando</td>
-                                    <td>admin</td>
+                                    <td>{{$loop->index+1}}</td>
+                                    <td>{{$v->username}}</td>
+                                    <td>{{$v->roles}}</td>
                                     <td>
-                                        <a href="/detail" class="btn btn-sm btn-danger">delete</a>
+                                        <a href="/admin/user/delete" class="btn btn-sm btn-danger">delete</a>
                                     </td>
-{{--                                    <td>{{ $loop->index + 1}}</td>--}}
-{{--                                    <td>{{ $v->nama_user}}</td>--}}
-{{--                                    <td>{{ $v->no_identitas}}</td>--}}
-{{--                                    <td>{{ $v->alamat}}</td>--}}
-{{--                                    <td>{{ $v->no_telepon}}</td>--}}
-{{--                                    <td>{{ $v->email}}</td>--}}
-{{--                                    <td>{{ $v->jenis_kelamin}}</td>--}}
-{{--                                    <td>{{ $v->tempat_lahir}}, {{ $v->tanggal_lahir}}</td>--}}
-{{--                                    <td>{{ $v->pekerjaan}}</td>--}}
-{{--                                    <td>{{ $v->agama}}</td>--}}
-{{--                                    <td>{{ $v->status}}</td>--}}
-{{--                                    <td>{{ $v->kewarganegaraan}}</td>--}}
                                 </tr>
-{{--                            @endforeach--}}
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Pemohon;
 use App\Models\Permohonan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class PermohonanController extends CustomController
 {
@@ -52,8 +53,35 @@ class PermohonanController extends CustomController
 
     public function detail($id)
     {
+
         $permohonan = Permohonan::with(['pemohon'])->where('id', $id)->firstOrFail();
         return view('admin.permohonan.detailpermohonan')->with(['permohonan' => $permohonan]);
+    }
+
+    public function edit($id){
+        if($this->request->isMethod('POST')){
+            $data = [
+                'pemohon_id' => $this->postField('pemohon_id'),
+                'nama_dokumen' => $this->postField('namaDokumen'),
+                'tgl_permohonan' => $this->postField('tgl_permohonan'),
+                'luas_sementara' => $this->postField('luas_sementara'),
+                'hak_milik' => $this->postField('hak_milik'),
+                'lokasi' => $this->postField('lokasi'),
+            ];
+            if ($this->request->hasFile('filePermohonan')) {
+                $permohonan = $this->generateImageName('filePermohonan');
+                $data = Arr::add($data, 'url', $permohonan);
+                $this->uploadImage('filePermohonan', $permohonan, 'permohonan');
+            }
+            $this->update(Permohonan::class, $data);
+            return redirect()->back()->with(['success' => 'success']);
+        }
+        $permohonan = Permohonan::with(['pemohon'])->where('id', $id)->firstOrFail();
+        $pemohon = Pemohon::all();
+//        return $permohonan->toArray();
+        $data['permohonan'] = $permohonan;
+        $data['pemohon'] = $pemohon;
+        return view('admin.permohonan.editpermohonan')->with($data);
     }
 
     public function patchUkur()

@@ -45,68 +45,63 @@
         <label for="exampleInputEmail1">Data Pemohon</label>
         <div readonly class="form-control" id="exampleInputEmail1" style="height: 190px">
             <p style="margin-bottom: 0">Nama Pemohon :
-                {{--                {{$kasus->jadwal->pemohon->pemohon->nama_pemohon}}--}}
+                {{$p->pemohon->nama}}
             </p>
             <p style="margin-bottom: 0">No. KTP :
-                {{--                {{$kasus->jadwal->pemohon->pemohon->no_identitas}}--}}
+                {{$p->pemohon->ktp}}
             </p>
             <p style="margin-bottom: 0">No. KK :
-                {{--                {{$kasus->jadwal->pemohon->pemohon->pekerjaan}}--}}
+                {{$p->pemohon->kk}}
             </p>
             <p style="margin-bottom: 0">No. NPWP :
-                {{--                {{$kasus->jadwal->pemohon->pemohon->no_telepon}}--}}
+                {{$p->pemohon->npwp}}
             </p>
             <p style="margin-bottom: 0">
                 SPPT :
-                {{--                {{$kasus->jadwal->pemohon->pemohon->tempat_lahir}}, {{$kasus->jadwal->pemohon->pemohon->tanggal_lahir}}--}}
+                {{$p->pemohon->sppt}}
             </p>
             <p style="margin-bottom: 0">NO. C :
-                {{--                {{$kasus->jadwal->pemohon->pemohon->email}}--}}
+                {{$p->pemohon->no_c}}
             </p>
             <p style="margin-bottom: 0">Saksi - Saksi :
-                {{--                {{$kasus->jadwal->pemohon->pemohon->alamat}--}}
+                {{$p->pemohon->saksi}}
             </p>
 
         </div>
     </div>
 
     <hr class="my-4"/>
-    <h6 class="heading-small text-muted mb-4">Data Kasus</h6>
+    <h6 class="heading-small text-muted mb-4"></h6>
 
 
     <div class="form-group">
-        <label for="exampleInputEmail1">No. Registras</label>
         <a readonly class="form-control" id="exampleInputEmail1" style="height: 30px">
            Nama Dokumen :
-{{--            {{$kasus->jadwal->no_registrasi}}--}}
+            {{$p->nama_dokumen}}
         </a>
     </div>
 
 
 
     <div class="form-group">
-        <label for="exampleInputEmail1">Jenis Kasus</label>
         <a readonly class="form-control" id="exampleInputEmail1" style="height: 30px">
-            Tanggal Permohonan
-{{--            {{$kasus->jadwal->jenis_kasus}}--}}
+            Tanggal Permohonan :
+            {{$p->tgl_permohonan}}
         </a>
     </div>
 
 
     <div class="form-group">
-        <label for="exampleInputEmail1">Layanan</label>
         <a readonly class="form-control" id="exampleInputEmail1" style="height: 30px">
-            Luas Tanah
-{{--            {{$kasus->jadwal->layanan}}--}}
+            Luas Tanah :
+            {{$p->luas_ukur}}
         </a>
     </div>
 
     <div class="form-group">
-        <label for="exampleInputEmail1">Kronologi Kasus</label>
         <a readonly class="form-control" id="exampleInputEmail1" style="height: 50px">
-            Hak Milik
-{{--            Kronologi Kasus --}}
-{{--            {{$kasus->jadwal->kronologi_kasus}}--}}
+            Hak Milik :
+            {{$p->hak_milik}}
         </a>
     </div>
 
@@ -119,7 +114,7 @@
 <div style="left:10px;width: 300px; margin-left : 100px;display: inline-block">
     <p class="text-center mb-5">Admin</p>
     <p class="text-center">(
-{{--                {{auth()->user()->username}}--}}
+                {{auth()->user()->username}}
         )</p>
 </div>
 
@@ -127,7 +122,7 @@
 <footer class="footer">
     @php $date = new DateTime("now", new DateTimeZone('Asia/Bangkok') ); @endphp
     <p class="text-right small mb-0 mt-0 pt-0 pb-0"> di cetak oleh :
-{{--                {{auth()->user()->username}}--}}
+                {{auth()->user()->username}}
     </p>
     <p class="text-right small mb-0 mt-0 pt-0 pb-0"> tgl: {{ $date->format('d F Y, H:i:s') }} </p>
 </footer>

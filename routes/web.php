@@ -36,12 +36,11 @@ Route::get(
 
 Route::get('/admin/pemohon', 'Admin\PemohonController@index');
 Route::get('/admin/pemohon/{id}', 'Admin\PemohonController@detail');
+Route::post('/admin/pemohon/{id}', 'Admin\PemohonController@detail');
 Route::get('/admin/tambahpemohon', 'Admin\PemohonController@addForm');
-Route::post('/admin/pemohon/store', 'Admin\PemohonController@add');
+Route::post('/admin/tambahpemohon', 'Admin\PemohonController@add');
 
-Route::get('/admin/user', function () {
-    return view('admin.user.user');
-});
+Route::get('/admin/user', 'Admin\UserController@index');
 
 Route::get('/admin/tambahuser', function () {
     return view('admin.user.tambahuser');
@@ -50,6 +49,8 @@ Route::get('/admin/tambahuser', function () {
 
 Route::get('/admin/permohonan', 'Admin\PermohonanController@index');
 Route::get('/admin/permohonan/{id}', 'Admin\PermohonanController@detail');
+Route::get('/admin/permohonan/edit/{id}', 'Admin\PermohonanController@edit');
+Route::post('/admin/permohonan/edit/{id}', 'Admin\PermohonanController@edit');
 Route::get('/admin/tambahpermohonan', 'Admin\PermohonanController@addForm');
 Route::post('/admin/permohonan/store', 'Admin\PermohonanController@add');
 Route::post('/admin/permohonan/patchukur', 'Admin\PermohonanController@patchUkur');
@@ -60,8 +61,8 @@ Route::get('/admin/detailpermohonan', function () {
 
 //Route::get('/admin/pemohon', 'Admin\PemohonController@index');
 
-Route::get('/admin/pemohon/cetak', 'LaporanController@cetakAdminDataPemohon')->name('admindatapemohoncetak');
-Route::get('/admin/permohonan/cetak', 'LaporanController@cetakAdminDataPermohonan')->name('cetakAdminDataPermohonan');
+Route::get('/admin/pemohon/cetak/{id}', 'LaporanController@cetakAdminDataPemohon')->name('admindatapemohoncetak');
+Route::get('/admin/permohonan/cetak/{id}', 'LaporanController@cetakAdminDataPermohonan')->name('cetakAdminDataPermohonan');
 
 
 Route::get('/logout', 'Auth\AuthController@logout');

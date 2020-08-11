@@ -45,7 +45,7 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link " id="" href="/admin">
+                        <a class="nav-link " id="dashboard" href="/admin">
                             <i data-feather="menu"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Dashboard</span>
                         </a>
@@ -66,7 +66,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link " id="user" href="/admin/permohonan">
+                        <a class="nav-link " id="permohonan" href="/admin/permohonan">
                             <i data-feather="clipboard"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Permohonan</span>
                         </a>
@@ -123,7 +123,7 @@
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div>
                                                 <h4 class="mb-0 text-sm">Hi,
-{{--                                                    {{auth()->user()->username}}--}}
+                                                    {{auth()->user()->username}}
                                                 </h4>
                                             </div>
                                         </div>
@@ -143,7 +143,7 @@
                                 {{--                  </span>--}}
                                 <div class="media-body  ml-2  d-none d-lg-block">
                                     <span class="mb-0 text-sm  font-weight-bold">Hi,
-{{--                                        {{auth()->user()->username}}--}}
+                                        {{auth()->user()->username}}
                                     </span>
                                 </div>
                             </div>

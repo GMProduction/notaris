@@ -97,7 +97,7 @@
                                             <a>FIle (pdf)</a>
                                             <div class="custom-file">
                                                 <label class="custom-file-label" for="filePermohonan">Select file</label>
-                                                <input type="file" class="custom-file-input" id="filePermohonan"
+                                                <input type="file" class="custom-file-input" id="filePermohonan" accept="application/pdf"
                                                        name="filePermohonan" lang="en">
                                             </div>
                                         </div>

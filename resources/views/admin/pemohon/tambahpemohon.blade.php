@@ -38,7 +38,7 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form method="POST" action="/admin/pemohon/store" enctype="multipart/form-data">
+                        <form method="POST" action="" enctype="multipart/form-data">
                             @csrf
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">

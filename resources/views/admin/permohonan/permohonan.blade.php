@@ -46,7 +46,7 @@
                                 <th scope="col" class="sort" data-sort="status">Hak Milik</th>
                                 <th scope="col" class="sort" data-sort="status">FIle (Pdf)</th>
 
-                                <th scope="col" class="sort" data-sort="status">Action</th>
+                                <th scope="col" class="sort" data-sort="status" colspan="2">Action</th>
 
                             </tr>
                             </thead>
@@ -64,6 +64,9 @@
                                     <td><a href="{{ asset('/uploads/permohonan') }}/{{ $v->url }}">{{ $v->url}}</a></td>
                                     <td>
                                         <a href="/admin/permohonan/{{ $v->id }}" class="btn btn-sm btn-primary">Detail</a>
+                                    </td>
+                                    <td>
+                                        <a href="/admin/permohonan/edit/{{ $v->id }}" class="btn btn-sm btn-success">Edit</a>
                                     </td>
                                 </tr>
                             @endforeach

@@ -75,7 +75,7 @@
                                                 style="height: 70px"></a></td>
 
                                     <td>
-                                        <a href="/admin/pemohon/{{$v->id}}" class="btn btn-sm btn-primary">Detail</a>
+                                        <a href="/admin/pemohon/{{$v->id}}" class="btn btn-sm btn-primary">Edit</a>
                                     </td>
                                 </tr>
                             @endforeach

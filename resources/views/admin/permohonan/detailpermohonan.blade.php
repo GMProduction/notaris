@@ -4,7 +4,7 @@
         <script>
             Swal.fire({
                 title: 'Success',
-                text: 'Berhasil Menyimpan Data',
+                text: 'Berhasil merubah Data',
                 icon: 'success',
                 confirmButtonText: 'Ok'
             })
@@ -26,7 +26,7 @@
                         </nav>
                     </div>
                     <div class="col-lg-6 col-5 text-right">
-                        <a href="/admin/permohonan/cetak" class="btn btn-md btn-neutral">Cetak</a>
+                        <a href="/admin/permohonan/cetak/{{$permohonan->id}}" class="btn btn-md btn-neutral">Cetak</a>
                     </div>
                 </div>
             </div>
@@ -92,13 +92,14 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-6 col-lg-offset-6">
                                         <div class="form-group">
                                             <a class="btn btn-success text-white"
                                                href="{{ asset('/uploads/permohonan') }}/{{$permohonan->url}}"
                                                target="_blank">Download File</a>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
 
