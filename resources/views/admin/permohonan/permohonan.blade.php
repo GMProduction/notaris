@@ -51,34 +51,22 @@
                             </tr>
                             </thead>
                             <tbody class="list">
-{{--                            @foreach($Permohonans as $v)--}}
+                            @foreach($permohonan as $v)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Fernando Tri Nugroho</td>
-                                    <td>Sertifikat tanah</td>
-                                    <td>04 Agustuts 2020</td>
-                                    <td>100 meter</td>
-                                    <td>Surakarta</td>
-                                    <td>Proses 1</td>
-                                    <td>Fernando Tri Nugroho</td>
-                                    <td>file001.pdf</td>
+                                    <td>{{ $loop->index + 1}}</td>
+                                    <td>{{ $v->pemohon->nama}}</td>
+                                    <td>{{ $v->nama_dokumen}}h</td>
+                                    <td>{{ $v->tgl_permohonan}}</td>
+                                    <td>{{ $v->luas_sementara}}</td>
+                                    <td>{{ $v->lokasi}}</td>
+                                    <td>{{ $v->status}}</td>
+                                    <td>{{ $v->hak_milik}}</td>
+                                    <td><a href="{{ asset('/uploads/permohonan') }}/{{ $v->url }}">{{ $v->url}}</a></td>
                                     <td>
-                                        <a href="/admin/detailpermohonan" class="btn btn-sm btn-primary">Detail</a>
+                                        <a href="/admin/permohonan/{{ $v->id }}" class="btn btn-sm btn-primary">Detail</a>
                                     </td>
-{{--                                    <td>{{ $loop->index + 1}}</td>--}}
-{{--                                    <td>{{ $v->nama_Permohonan}}</td>--}}
-{{--                                    <td>{{ $v->no_identitas}}</td>--}}
-{{--                                    <td>{{ $v->alamat}}</td>--}}
-{{--                                    <td>{{ $v->no_telepon}}</td>--}}
-{{--                                    <td>{{ $v->email}}</td>--}}
-{{--                                    <td>{{ $v->jenis_kelamin}}</td>--}}
-{{--                                    <td>{{ $v->tempat_lahir}}, {{ $v->tanggal_lahir}}</td>--}}
-{{--                                    <td>{{ $v->pekerjaan}}</td>--}}
-{{--                                    <td>{{ $v->agama}}</td>--}}
-{{--                                    <td>{{ $v->status}}</td>--}}
-{{--                                    <td>{{ $v->kewarganegaraan}}</td>--}}
                                 </tr>
-{{--                            @endforeach--}}
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

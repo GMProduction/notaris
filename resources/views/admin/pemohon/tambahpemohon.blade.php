@@ -20,7 +20,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="/mitra/iklan">Data Pemohon</a></li>
+                                <li class="breadcrumb-item"><a href="/admin/pemohon">Data Pemohon</a></li>
                                 <li class="breadcrumb-item"><a href="#">Tambah Data</a></li>
                             </ol>
                         </nav>
@@ -38,7 +38,7 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form method="POST" enctype="multipart/form-data">
+                        <form method="POST" action="/admin/pemohon/store" enctype="multipart/form-data">
                             @csrf
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">
@@ -47,7 +47,7 @@
                                     <div class="col-lg-4">
                                         <div class="form-group">
                                             <label for="namapemohon">Nama Pemohon</label>
-                                            <input type="text" id="namapemohon"  name="namapemohon"
+                                            <input type="text" id="namapemohon"  name="nama"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -87,7 +87,7 @@
                                     <div class="col-lg-4">
                                         <div class="form-group">
                                             <label  for="noc">No. C</label>
-                                            <input type="text" id="noc" name="noc"
+                                            <input type="text" id="no_c" name="no_c"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -103,7 +103,7 @@
                                     <div class="col-lg-4">
                                         <div class="form-group">
                                             <label  for="notelp">No. Telp (62)</label>
-                                            <input type="text" id="notelp" name="notelp"
+                                            <input type="text" id="no_telp" name="no_telp"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -118,8 +118,8 @@
                                     <a>Foto KTP</a>
                                     <div class="custom-file">
                                         <label class="custom-file-label" for="fotoKtp">Select file</label>
-                                        <input type="file" class="custom-file-input" id="fotoKtp"
-                                               name="fotoKtp" lang="en">
+                                        <input type="file" class="custom-file-input" id="f_ktp"
+                                               name="f_ktp" lang="en">
                                     </div>
                                 </div>
                             </div>
@@ -128,8 +128,8 @@
                                     <a>Foto KK</a>
                                     <div class="custom-file">
                                         <label class="custom-file-label" for="fotoKtp">Select file</label>
-                                        <input type="file" class="custom-file-input" id="fotoKK"
-                                               name="fotoKK" lang="en">
+                                        <input type="file" class="custom-file-input" id="f_kk"
+                                               name="f_kk" lang="en">
                                     </div>
                                 </div>
                             </div>
@@ -138,8 +138,8 @@
                                     <a>Foto NPWP</a>
                                     <div class="custom-file">
                                         <label class="custom-file-label" for="fotoKtp">Select file</label>
-                                        <input type="file" class="custom-file-input" id="fotonpwp"
-                                               name="fotonpwp" lang="en">
+                                        <input type="file" class="custom-file-input" id="f_npwp"
+                                               name="f_npwp" lang="en">
                                     </div>
                                 </div>
 

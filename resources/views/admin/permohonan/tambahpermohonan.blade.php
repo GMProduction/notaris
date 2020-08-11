@@ -20,7 +20,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="/mitra/iklan">Data Pemohon</a></li>
+                                <li class="breadcrumb-item"><a href="/admin/permohonan">Data Permohonan</a></li>
                                 <li class="breadcrumb-item"><a href="#">Tambah Data</a></li>
                             </ol>
                         </nav>
@@ -38,17 +38,18 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form method="POST" enctype="multipart/form-data">
+                        <form method="POST" action="/admin/permohonan/store" enctype="multipart/form-data">
                             @csrf
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
 
                                     <div class="col-lg-4">
-                                        <select class="form-control" id="idLelang" name="IdLelang">
-{{--                                            @foreach($lelangs as $lelang)--}}
-{{--                                                <option value="{{ $pemohon->id }}">{{ pemohon->nama }}</option>--}}
-{{--                                            @endforeach--}}
+                                        <label  for="namaDokumen">Nama Pemohon</label>
+                                        <select class="form-control" id="pemohon_id" name="pemohon_id">
+                                            @foreach($pemohon as $v)
+                                                <option value="{{ $v->id }}">{{ $v->nama }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 
@@ -64,14 +65,14 @@
                                         <div class="form-group">
                                             <label for="tanggal" class="form-control-label">Tanggal Permohonan</label>
                                             <input class="form-control" type="date" id="form"
-                                                   name="form">
+                                                   name="tgl_permohonan">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4">
                                         <div class="form-group">
                                             <label  for="luastanah">Luas Tanah</label>
-                                            <input type="number" id="luastanah" name="luastanah"
+                                            <input type="number" id="luas_sementara" name="luas_sementara"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -79,7 +80,14 @@
                                     <div class="col-lg-4">
                                         <div class="form-group">
                                             <label  for="hakmilik">Hak Milik</label>
-                                            <input type="text" id="hakmilik" name="hakmilik"
+                                            <input type="text" id="hak_milik" name="hak_milik"
+                                                   class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label  for="hakmilik">Lokasi</label>
+                                            <input type="text" id="lokasi" name="lokasi"
                                                    class="form-control">
                                         </div>
                                     </div>

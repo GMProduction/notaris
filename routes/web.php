@@ -34,17 +34,10 @@ Route::get(
     }
 );
 
-Route::get('/admin/pemohon', function () {
-    return view('admin.pemohon.pemohon');
-});
-
-Route::get('/admin/tambahpemohon', function () {
-    return view('admin.pemohon.tambahpemohon');
-});
-
-Route::get('/admin/detailpemohon', function () {
-    return view('admin.pemohon.detailpemohon');
-});
+Route::get('/admin/pemohon', 'Admin\PemohonController@index');
+Route::get('/admin/pemohon/{id}', 'Admin\PemohonController@detail');
+Route::get('/admin/tambahpemohon', 'Admin\PemohonController@addForm');
+Route::post('/admin/pemohon/store', 'Admin\PemohonController@add');
 
 Route::get('/admin/user', function () {
     return view('admin.user.user');
@@ -55,21 +48,16 @@ Route::get('/admin/tambahuser', function () {
 });
 
 
-Route::get('/admin/permohonan', function () {
-    return view('admin.permohonan.permohonan');
-});
-
-Route::get('/admin/tambahpermohonan', function () {
-    return view('admin.permohonan.tambahpermohonan');
-});
+Route::get('/admin/permohonan', 'Admin\PermohonanController@index');
+Route::get('/admin/permohonan/{id}', 'Admin\PermohonanController@detail');
+Route::get('/admin/tambahpermohonan', 'Admin\PermohonanController@addForm');
+Route::post('/admin/permohonan/store', 'Admin\PermohonanController@add');
+Route::post('/admin/permohonan/patchukur', 'Admin\PermohonanController@patchUkur');
 
 Route::get('/admin/detailpermohonan', function () {
     return view('admin.permohonan.detailpermohonan');
 });
 
-Route::get('/admin/tambahukur', function () {
-    return view('admin.permohonan.tambahukur');
-});
 //Route::get('/admin/pemohon', 'Admin\PemohonController@index');
 
 Route::get('/admin/pemohon/cetak', 'LaporanController@cetakAdminDataPemohon')->name('admindatapemohoncetak');
