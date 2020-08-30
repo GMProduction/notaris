@@ -37,7 +37,8 @@
         <!-- Brand -->
         <div class="sidenav-header" style="margin-top: 20px; margin-left: 24px; height: 40px; text-align: start">
             {{--            <img src="../assets/img/brand/blue.png" class="navbar-brand-img" alt="...">--}}
-            <img src="{{asset("assets/img/theme/bootstrap.jpg")}}" style="height: 50px"/><a class="text-black-50">Nama Perusahaan</a>
+{{--            <img src="{{asset("assets/img/theme/bootstrap.jpg")}}" style="height: 50px"/>--}}
+            <a class="text-black-50">Notaris PPAT Candra Wahyu Nugroho, S.H.,M.Kn</a>
         </div>
         <div class="navbar-inner">
             <!-- Collapse -->

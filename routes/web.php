@@ -72,3 +72,7 @@ Route::get('/detail', function () {
     return view('detail');
 });
 
+Route::get('/kontak', function () {
+    return view('kontak');
+});
+
