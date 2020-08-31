@@ -133,7 +133,17 @@
                                         No permohonan</a>
                                     <a class="btn btn-lg btn-warning text-white" data-toggle="modal"
                                        data-target="#exampleModalCenter">Input Ukur</a>
-                                    <button type="submit" class="btn btn-lg btn-primary">Proses</button>
+                                    <a class="btn btn-lg btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Proses</a>
+
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Proses Penandatanganan Akta ke badan keuangan daerah</a>
+                                        <a class="dropdown-item" href="#">Berkas berada di Kantor Badan Keuangan Daerah (BKD)</a>
+                                        <a class="dropdown-item" href="#">Pajak Pembeli Sudah Jadi</a>
+                                        <a class="dropdown-item" href="#">Berkas berada di Kantor Pelayanan Pajak Pratama (KPP)</a>
+                                        <a class="dropdown-item" href="#">Pajak Penjual Sudah Jadi</a>
+                                        <a class="dropdown-item" href="#">Proses Penataan Berkas yang akan di ajukan ke BPN</a>
+                                        <a class="dropdown-item" href="#">Selesai</a>
+                                    </div>
                                 </div>
 
                                 <!-- Modal -->

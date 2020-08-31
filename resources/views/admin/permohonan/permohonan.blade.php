@@ -44,6 +44,7 @@
                                 <th scope="col" class="sort" data-sort="status">Lokasi Tanah</th>
                                 <th scope="col" class="sort" data-sort="status">Status</th>
                                 <th scope="col" class="sort" data-sort="status">Hak Milik</th>
+                                <th scope="col" class="sort" data-sort="status">No. Permohonan</th>
                                 <th scope="col" class="sort" data-sort="status">FIle (Pdf)</th>
 
                                 <th scope="col" class="sort" data-sort="status" colspan="2">Action</th>
@@ -61,12 +62,16 @@
                                     <td>{{ $v->lokasi}}</td>
                                     <td>{{ $v->status}}</td>
                                     <td>{{ $v->hak_milik}}</td>
+                                    <td>{{ $v->no_permohonan}}</td>
                                     <td><a href="{{ asset('/uploads/permohonan') }}/{{ $v->url }}">{{ $v->url}}</a></td>
                                     <td>
                                         <a href="/admin/permohonan/{{ $v->id }}" class="btn btn-sm btn-primary">Detail</a>
                                     </td>
                                     <td>
-                                        <a href="/admin/permohonan/edit/{{ $v->id }}" class="btn btn-sm btn-success">Edit</a>
+                                        <a href="https://wa.me/{{ $v->pemohon->no_telp}}?text=Berikut%20ini%20nomor%20dokumen%20Anda%20{{ $v->no_permohonan}}" class="btn btn-sm btn-success">Kirim nomo permohonan</a>
+                                    </td>
+                                    <td>
+                                        <a href="/admin/permohonan/edit/{{ $v->id }}" class="btn btn-sm btn-warning">Edit</a>
                                     </td>
                                 </tr>
                             @endforeach

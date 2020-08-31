@@ -65,11 +65,11 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4">
+                    <div class="col-lg-12">
+
                         <div class="form-group">
-                            <label for="status">Status</label>
-                            <input readonly type="text" id="status" name="status"
-                                   class="form-control">
+                            <label for="exampleFormControlTextarea1">Status</label>
+                            <textarea class="form-control" id="status" name="status" rows="3"></textarea>
                         </div>
                     </div>
 
