@@ -47,7 +47,7 @@
                                 <th scope="col" class="sort" data-sort="status">No. Permohonan</th>
                                 <th scope="col" class="sort" data-sort="status">FIle (Pdf)</th>
 
-                                <th scope="col" class="sort" data-sort="status" colspan="2">Action</th>
+                                <th scope="col" class="sort text-center" data-sort="status" colspan="3">Action</th>
 
                             </tr>
                             </thead>

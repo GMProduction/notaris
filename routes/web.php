@@ -54,6 +54,7 @@ Route::post('/admin/permohonan/edit/{id}', 'Admin\PermohonanController@edit');
 Route::get('/admin/tambahpermohonan', 'Admin\PermohonanController@addForm');
 Route::post('/admin/permohonan/store', 'Admin\PermohonanController@add');
 Route::post('/admin/permohonan/patchukur', 'Admin\PermohonanController@patchUkur');
+Route::post('/admin/permohonan/edit-status', 'Admin\PermohonanController@edit_status');
 
 Route::get('/admin/detailpermohonan', function () {
     return view('admin.permohonan.detailpermohonan');
