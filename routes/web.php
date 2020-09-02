@@ -73,6 +73,9 @@ Route::get('/detail', function () {
     return view('detail');
 });
 
+Route::get('/detail/{id}', 'User\PermohonanController@detail');
+
+
 Route::get('/kontak', function () {
     return view('kontak');
 });

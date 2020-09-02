@@ -113,7 +113,7 @@
                                     @php $status = 'Selesai' @endphp
                                     @break
                                 @endswitch
-                                <div class="col-lg-4">
+                                <div class="col-lg-12">
                                     <div class="form-group">
                                         <label for="status">Status</label>
                                         <input readonly type="text" id="status" name="status"
