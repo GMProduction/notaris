@@ -37,7 +37,8 @@
         <!-- Brand -->
         <div class="sidenav-header" style="margin-top: 20px; margin-left: 24px; height: 40px; text-align: start">
             {{--            <img src="../assets/img/brand/blue.png" class="navbar-brand-img" alt="...">--}}
-            <img src="{{asset("assets/img/theme/bootstrap.jpg")}}" style="height: 50px"/><a class="text-black-50">Nama Perusahaan</a>
+{{--            <img src="{{asset("assets/img/theme/bootstrap.jpg")}}" style="height: 50px"/>--}}
+            <a class="text-black-50">Notaris PPAT Candra Wahyu Nugroho, S.H.,M.Kn</a>
         </div>
         <div class="navbar-inner">
             <!-- Collapse -->
@@ -170,8 +171,8 @@
         <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6">
                 <div class="copyright text-center  text-lg-left  text-muted">
-                    &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1"
-                                   target="_blank">Wisnu</a>
+{{--                    &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1"--}}
+{{--                                   target="_blank">Wisnu</a>--}}
                 </div>
             </div>
 
