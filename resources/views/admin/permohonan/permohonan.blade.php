@@ -68,7 +68,7 @@
                                         <a href="/admin/permohonan/{{ $v->id }}" class="btn btn-sm btn-primary">Detail</a>
                                     </td>
                                     <td>
-                                        <a href="https://wa.me/{{ $v->pemohon->no_telp}}?text=Berikut%20ini%20nomor%20dokumen%20Anda%20{{ $v->no_permohonan}}" class="btn btn-sm btn-success">Kirim nomo permohonan</a>
+                                        <a href="https://wa.me/{{ $v->pemohon->no_telp}}?text=Berikut%20ini%20nomor%20dokumen%20Anda%20{{ $v->no_permohonan}}" class="btn btn-sm btn-success">Kirim nomor permohonan</a>
                                     </td>
                                     <td>
                                         <a href="/admin/permohonan/edit/{{ $v->id }}" class="btn btn-sm btn-warning">Edit</a>
