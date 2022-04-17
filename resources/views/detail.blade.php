@@ -74,7 +74,7 @@
                         @php $status = 'Menunggu' @endphp
                         @break
                         @case(1)
-                        @php $status = 'Proses Penandatanganan Akta ke badan keuangan daerah' @endphp
+                        @php $status = 'Proses Penandatanganan Akta di Notaris PPAT' @endphp
                         @break
                         @case(2)
                         @php $status = 'Berkas berada di Kantor Badan Keuangan Daerah (BKD)' @endphp
@@ -92,6 +92,9 @@
                         @php $status = 'Proses Penataan Berkas yang akan di ajukan ke BPN' @endphp
                         @break
                         @case(7)
+                        @php $status = 'Berkas Masuk Ke BPN' @endphp
+                        @break
+                        @case(8)
                         @php $status = 'Selesai' @endphp
                         @break
                     @endswitch

@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('content'); ?>
     <div id="carouselExampleIndicators" class="carousel slide ml-auto mr-auto" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -38,10 +39,10 @@
 
             <div style="display: flex " class="ml-auto mr-auto mt-3">
                 <div class="form-group mr-3" style="width: 300px">
-                    <input type="text" id="saksi" name="saksi"
+                    <input type="text" id="nomor" name="nomor"
                            class="form-control">
                 </div>
-                <button class="btn btn-primary btn-sm" style="height: 45px; width: 75px">Cari</button>
+                <button class="btn btn-primary btn-sm" onclick="submit()" style="height: 45px; width: 75px">Cari</button>
             </div>
         </div>
     </section>
@@ -52,6 +53,14 @@
 
 <?php $__env->startSection('script'); ?>
 
+    <script>
+        function submit() {
+            var nomor = $("#nomor").val();
+            location.href = "/detail/"+nomor;
+
+            // alert(nomor);
+        }
+    </script>
 
 <?php $__env->stopSection(); ?>
 

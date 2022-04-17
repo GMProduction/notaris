@@ -1,6 +1,6 @@
 @extends('admin.base')
 @section('content')
-    @if(\Illuminate\Support\Facades\Session::has('success'))
+    @if (\Illuminate\Support\Facades\Session::has('success'))
         <script>
             Swal.fire({
                 title: 'Success',
@@ -26,7 +26,7 @@
                         </nav>
                     </div>
                     <div class="col-lg-6 col-5 text-right">
-                        <a href="/admin/permohonan/cetak/{{$permohonan->id}}" class="btn btn-md btn-neutral">Cetak</a>
+                        <a href="/admin/permohonan/cetak/{{ $permohonan->id }}" class="btn btn-md btn-neutral">Cetak</a>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                                     <div class="form-group">
                                         <label for="namapemohon">Nama Pemohon</label>
                                         <input readonly type="text" id="namapemohon" name="namapemohon"
-                                               class="form-control" value="{{ $permohonan->pemohon->nama }}">
+                                            class="form-control" value="{{ $permohonan->pemohon->nama }}">
                                     </div>
                                 </div>
 
@@ -56,76 +56,87 @@
                                     <div class="form-group">
                                         <label for="namaDokumen">Nama Dokumen</label>
                                         <input readonly type="text" id="namaDokumen" name="namaDokumen"
-                                               class="form-control" value="{{ $permohonan->nama_dokumen }}">
+                                            class="form-control" value="{{ $permohonan->nama_dokumen }}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="tanggal" class="form-control-label">Tanggal Permohonan</label>
-                                        <input readonly class="form-control" type="date" id="form"
-                                               name="form" value="{{ $permohonan->tgl_permohonan }}">
+                                        <input readonly class="form-control" type="date" id="form" name="form"
+                                            value="{{ $permohonan->tgl_permohonan }}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="luastanah">Luas Tanah</label>
-                                        <input readonly type="number" id="luastanah" name="luastanah"
-                                               class="form-control" value="{{ $permohonan->luas_sementara }}">
+                                        <input readonly type="number" id="luastanah" name="luastanah" class="form-control"
+                                            value="{{ $permohonan->luas_sementara }}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="hakmilik">Hak Milik</label>
-                                        <input readonly type="text" id="hakmilik" name="hakmilik"
-                                               class="form-control" value="{{ $permohonan->hak_milik }}">
+                                        <input readonly type="text" id="hakmilik" name="hakmilik" class="form-control"
+                                            value="{{ $permohonan->hak_milik }}">
                                     </div>
                                 </div>
                                 @php
                                     global $status;
-
+                                    
                                 @endphp
                                 @switch($permohonan->status)
                                     @case(0)
-                                    @php $status = 'Menunggu' @endphp
+                                        @php $status = 'Menunggu' @endphp
                                     @break
+
                                     @case(1)
-                                    @php $status = 'Proses Penandatanganan Akta ke badan keuangan daerah' @endphp
+                                        @php $status = 'Proses Penandatanganan Akta di Notaris PPAT' @endphp
                                     @break
+
                                     @case(2)
-                                    @php $status = 'Berkas berada di Kantor Badan Keuangan Daerah (BKD)' @endphp
+                                        @php $status = 'Berkas berada di Kantor Badan Keuangan Daerah (BKD)' @endphp
                                     @break
+
                                     @case(3)
-                                    @php $status = 'Pajak Pembeli Sudah Jadi' @endphp
+                                        @php $status = 'Pajak Pembeli Sudah Jadi' @endphp
                                     @break
+
                                     @case(4)
-                                    @php $status = 'Berkas berada di Kantor Pelayanan Pajak Pratama (KPP)' @endphp
+                                        @php $status = 'Berkas berada di Kantor Pelayanan Pajak Pratama (KPP)' @endphp
                                     @break
+
                                     @case(5)
-                                    @php $status = 'Pajak Penjual Sudah Jadi' @endphp
+                                        @php $status = 'Pajak Penjual Sudah Jadi' @endphp
                                     @break
+
                                     @case(6)
-                                    @php $status = 'Proses Penataan Berkas yang akan di ajukan ke BPN' @endphp
+                                        @php $status = 'Proses Penataan Berkas yang akan di ajukan ke BPN' @endphp
                                     @break
+
                                     @case(7)
-                                    @php $status = 'Selesai' @endphp
+                                        @php $status = 'Berkas Masuk Ke BPN' @endphp
+                                    @break
+
+                                    @case(8)
+                                        @php $status = 'Selesai' @endphp
                                     @break
                                 @endswitch
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label for="status">Status</label>
-                                        <input readonly type="text" id="status" name="status"
-                                               class="form-control" value="{{ $status }}">
+                                        <input readonly type="text" id="status" name="status" class="form-control"
+                                            value="{{ $status }}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6 col-lg-offset-6">
                                     <div class="form-group">
                                         <a class="btn btn-success text-white"
-                                           href="{{ asset('/uploads/permohonan') }}/{{$permohonan->url}}"
-                                           target="_blank">Download File</a>
+                                            href="{{ asset('/uploads/permohonan') }}/{{ $permohonan->url }}"
+                                            target="_blank">Download File</a>
                                     </div>
                                 </div>
 
@@ -141,7 +152,7 @@
                                     <div class="form-group">
                                         <label for="hasilukurtanah">Luas Tanah</label>
                                         <input readonly type="text" id="hasilukurtanah" name="hasilukurtanah"
-                                               class="form-control" value="{{ $permohonan->luas_ukur}}">
+                                            class="form-control" value="{{ $permohonan->luas_ukur }}">
                                     </div>
                                 </div>
 
@@ -149,66 +160,70 @@
                                     <div class="form-group">
                                         <label for="tanggalukur">Tanggal Ukur</label>
                                         <input readonly type="text" id="tanggalukur" name="tanggalukur"
-                                               class="form-control" value="{{ $permohonan->tgl_ukur }}">
+                                            class="form-control" value="{{ $permohonan->tgl_ukur }}">
                                     </div>
                                 </div>
 
                             </div>
-                            <hr class="my-4"/>
+                            <hr class="my-4" />
                             <!-- Description -->
                             <div class="col-12 text-right">
                                 <a class="btn btn-lg btn-success text-white"
-                                   href="https://wa.me/628975050520?text=Ini%20nomor%20permohonan%20anda%20{{ $permohonan->no_permohonan }}">Kirim
+                                    href="https://wa.me/628975050520?text=Ini%20nomor%20permohonan%20anda%20{{ $permohonan->no_permohonan }}">Kirim
                                     No permohonan</a>
                                 <a class="btn btn-lg btn-warning text-white" data-toggle="modal"
-                                   data-target="#exampleModalCenter">Input Ukur</a>
-                                <a class="btn btn-lg btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">Proses</a>
+                                    data-target="#exampleModalCenter">Input Ukur</a>
+                                <a class="btn btn-lg btn-primary dropdown-toggle" href="#" role="button"
+                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">Proses</a>
 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#" onclick="edit_status(1)">Proses Penandatanganan Akta ke badan keuangan daerah</a>
-                                    <a class="dropdown-item" href="#" onclick="edit_status(2)">Berkas berada di Kantor Badan Keuangan Daerah (BKD)</a>
+                                    <a class="dropdown-item" href="#" onclick="edit_status(1)">Proses Penandatanganan Akta
+                                        di Notaris PPAT</a>
+                                    <a class="dropdown-item" href="#" onclick="edit_status(2)">Berkas berada di Kantor
+                                        Badan Keuangan Daerah (BKD)</a>
                                     <a class="dropdown-item" href="#" onclick="edit_status(3)">Pajak Pembeli Sudah Jadi</a>
-                                    <a class="dropdown-item" href="#" onclick="edit_status(4)">Berkas berada di Kantor Pelayanan Pajak Pratama (KPP)</a>
+                                    <a class="dropdown-item" href="#" onclick="edit_status(4)">Berkas berada di Kantor
+                                        Pelayanan Pajak Pratama (KPP)</a>
                                     <a class="dropdown-item" href="#" onclick="edit_status(5)">Pajak Penjual Sudah Jadi</a>
-                                    <a class="dropdown-item" href="#" onclick="edit_status(6)">Proses Penataan Berkas yang akan di ajukan ke BPN</a>
-                                    <a class="dropdown-item" href="#" onclick="edit_status(7)">Selesai</a>
+                                    <a class="dropdown-item" href="#" onclick="edit_status(6)">Proses Penataan Berkas yang
+                                        akan di ajukan ke BPN</a>
+                                    <a class="dropdown-item" href="#" onclick="edit_status(7)">Berkas Masuk Ke BPN</a>
+                                    <a class="dropdown-item" href="#" onclick="edit_status(8)">Selesai</a>
                                 </div>
                             </div>
 
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
                                             <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
+                                                aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <form action="/admin/permohonan/patchukur" enctype="multipart/form-data"
-                                              method="post">
+                                            method="post">
                                             @csrf
-                                            <input type="hidden" value="{{$permohonan->id}}" name="id">
+                                            <input type="hidden" value="{{ $permohonan->id }}" name="id">
                                             <div class="modal-body">
                                                 <div class="form-group">
                                                     <label for="tanggalukur" class="form-control-label">Tanggal
                                                         Ukur</label>
-                                                    <input class="form-control" type="date" id="form"
-                                                           name="tgl_ukur">
+                                                    <input class="form-control" type="date" id="form" name="tgl_ukur">
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="luastanah">Luas Tanah</label>
                                                     <input type="number" id="luasukur" name="luasukur"
-                                                           class="form-control">
+                                                        class="form-control">
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Close
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">Simpan</button>
                                             </div>
@@ -223,17 +238,12 @@
         </div>
 
     </div>
-
-
-
-
 @endsection
 
 @section('script')
-
     <script>
-        $(document).ready(function () {
-            if(sessionStorage.getItem('status') === 'Success'){
+        $(document).ready(function() {
+            if (sessionStorage.getItem('status') === 'Success') {
                 Swal.fire({
                     title: 'Success',
                     text: 'Berhasil merubah Data',
@@ -243,13 +253,14 @@
                 sessionStorage.setItem("status", "end");
             }
         });
+
         function edit_status(st) {
             let data = {
-                '_token': '{{csrf_token()}}',
-                'id': '{{$permohonan->id}}',
+                '_token': '{{ csrf_token() }}',
+                'id': '{{ $permohonan->id }}',
                 'status': st
             };
-            $.post('/admin/permohonan/edit-status', data, function (dat) {
+            $.post('/admin/permohonan/edit-status', data, function(dat) {
                 if (dat['status'] === 200) {
                     console.log(dat['payload']['data']);
                     sessionStorage.setItem("status", "Success");
@@ -259,5 +270,4 @@
 
         }
     </script>
-
 @endsection

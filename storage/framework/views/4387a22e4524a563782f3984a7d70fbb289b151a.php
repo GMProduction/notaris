@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>notaris</title>
+    <title>Notaris PPAT Candra Wahyu</title>
     <!-- Favicon -->
 
 <!-- Fonts -->
@@ -27,7 +27,7 @@
 <div class="main-content" id="panel">
     <!-- As a link -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white" style="border-bottom: 3px solid #dddddd">
-        <a class="navbar-brand text-xl text-primary" href="#" style=" font-weight: bold">PTSL</a>
+        <a class="navbar-brand text-xl text-primary" href="#" style=" font-weight: bold">Sistem Informasi Permohonan Jual Beli</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,7 +59,11 @@
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <h6>About</h6>
-                    <p class="text-justify">PTSL notaris online.</p>
+                    <p class="text-justify">Notaris PPAT Candra Wahyu Nugroho, S.H.,M.Kn</p>
+                    <p class="text-justify">Alamat: Jl. Adi Sucipto No.53, Gatak, Gajahan, Kec. Colomadu, Kabupaten Karanganyar, Jawa Tengah 57174
+                        </p>
+                    <p>Telepon: (0271) 7088153</p>
+                    <a href="https://wa.me/6281393966667?text=Halo%20notaris%20PPAT%20Candra%20Wahyu%20Nugroho" style="font-size: 14px; " class="text-white mb-0" >081393966667 (Whatsapp)</a>
                 </div>
 
                 <div class="col-xs-6 col-md-3">
