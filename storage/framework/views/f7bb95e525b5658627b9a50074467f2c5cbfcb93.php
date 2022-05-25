@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('content'); ?>
 
     <!-- Header -->
@@ -42,6 +43,7 @@
                                 <th scope="col" class="sort" data-sort="status">NPWP</th>
                                 <th scope="col" class="sort" data-sort="status">SPPT</th>
                                 <th scope="col" class="sort" data-sort="status">No. C</th>
+                                <th scope="col" class="sort" data-sort="status">No. HP</th>
                                 <th scope="col" class="sort" data-sort="status">Saksi</th>
                                 <th scope="col" class="sort" data-sort="status">Foto. KTP</th>
                                 <th scope="col" class="sort" data-sort="status">Foto. KK</th>
@@ -51,37 +53,32 @@
                             </tr>
                             </thead>
                             <tbody class="list">
-
+                            <?php $__currentLoopData = $pemohon; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Fernando Tri Nugroho</td>
-                                    <td>3332133132131</td>
-                                    <td>3123123123</td>
-                                    <td>123123123</td>
-                                    <td>12312</td>
-                                    <td>12312</td>
-                                    <td>12312</td>
-                                    <td><a style="height: 70px" href="<?php echo e(asset('assets/img/theme/angular.jpg')); ?>"><img src="<?php echo e(asset('assets/img/theme/angular.jpg')); ?>" style="height: 70px"></a></td>
-                                    <td><a style="height: 70px" href="<?php echo e(asset('assets/img/theme/angular.jpg')); ?>"><img src="<?php echo e(asset('assets/img/theme/angular.jpg')); ?>" style="height: 70px"></a></td>
-                                    <td><a style="height: 70px" href="<?php echo e(asset('assets/img/theme/angular.jpg')); ?>"><img src="<?php echo e(asset('assets/img/theme/angular.jpg')); ?>" style="height: 70px"></a></td>
+                                    <td><?php echo e($loop->index + 1); ?></td>
+                                    <td><?php echo e($v->nama); ?></td>
+                                    <td><?php echo e($v->ktp); ?></td>
+                                    <td><?php echo e($v->kk); ?></td>
+                                    <td><?php echo e($v->npwp); ?></td>
+                                    <td><?php echo e($v->sppt); ?></td>
+                                    <td><?php echo e($v->no_c); ?></td>
+                                    <td><?php echo e($v->no_telp); ?></td>
+                                    <td><?php echo e($v->saksi); ?></td>
+                                    <td><a style="height: 70px" href="<?php echo e(asset('/uploads/ktp')); ?>/<?php echo e($v->url_ktp); ?>"><img
+                                                src="<?php echo e(asset('/uploads/ktp')); ?>/<?php echo e($v->url_ktp); ?>"
+                                                style="height: 70px"></a></td>
+                                    <td><a style="height: 70px" href="<?php echo e(asset('/uploads/kk')); ?>/<?php echo e($v->url_kk); ?>"><img
+                                                src="<?php echo e(asset('/uploads/kk')); ?>/<?php echo e($v->url_kk); ?>"
+                                                style="height: 70px"></a></td>
+                                    <td><a style="height: 70px" href="<?php echo e(asset('/uploads/npwp')); ?>/<?php echo e($v->url_npwp); ?>"><img
+                                                src="<?php echo e(asset('/uploads/npwp')); ?>/<?php echo e($v->url_npwp); ?>"
+                                                style="height: 70px"></a></td>
 
                                     <td>
-                                        <a href="/admin/detailpemohon" class="btn btn-sm btn-primary">Detail</a>
+                                        <a href="/admin/pemohon/<?php echo e($v->id); ?>" class="btn btn-sm btn-primary">Edit</a>
                                     </td>
-
-
-
-
-
-
-
-
-
-
-
-
                                 </tr>
-
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </tbody>
                         </table>
                     </div>

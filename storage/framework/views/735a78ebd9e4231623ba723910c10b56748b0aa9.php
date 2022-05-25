@@ -61,7 +61,7 @@
                     <div class="card-body px-lg-5 py-lg-5">
                         <div class="text-center text-muted mb-4">
 
-                            <a class="text-black-50">Sistem Informasi Permohonan PTSL</a>
+                            <a class="text-black-50">Sistem Informasi Permohonan Jual Beli</a>
                             <br>
                             <small>Masukan user dan password</small>
 

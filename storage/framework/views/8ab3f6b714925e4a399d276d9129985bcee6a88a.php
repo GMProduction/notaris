@@ -37,7 +37,8 @@
         <!-- Brand -->
         <div class="sidenav-header" style="margin-top: 20px; margin-left: 24px; height: 40px; text-align: start">
             
-            <img src="<?php echo e(asset("assets/img/theme/bootstrap.jpg")); ?>" style="height: 50px"/><a class="text-black-50">Nama Perusahaan</a>
+
+            <a class="text-black-50">Notaris PPAT Candra Wahyu Nugroho, S.H.,M.Kn</a>
         </div>
         <div class="navbar-inner">
             <!-- Collapse -->
@@ -45,7 +46,7 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link " id="" href="/admin">
+                        <a class="nav-link " id="dashboard" href="/admin">
                             <i data-feather="menu"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Dashboard</span>
                         </a>
@@ -66,7 +67,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link " id="user" href="/admin/permohonan">
+                        <a class="nav-link " id="permohonan" href="/admin/permohonan">
                             <i data-feather="clipboard"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Permohonan</span>
                         </a>
@@ -123,6 +124,7 @@
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div>
                                                 <h4 class="mb-0 text-sm">Hi,
+                                                    <?php echo e(auth()->user()->username); ?>
 
                                                 </h4>
                                             </div>
@@ -143,6 +145,7 @@
                                 
                                 <div class="media-body  ml-2  d-none d-lg-block">
                                     <span class="mb-0 text-sm  font-weight-bold">Hi,
+                                        <?php echo e(auth()->user()->username); ?>
 
                                     </span>
                                 </div>
@@ -170,8 +173,8 @@
         <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6">
                 <div class="copyright text-center  text-lg-left  text-muted">
-                    &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1"
-                                   target="_blank">Wisnu</a>
+
+
                 </div>
             </div>
 

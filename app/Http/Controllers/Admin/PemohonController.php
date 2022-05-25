@@ -51,8 +51,12 @@ class PemohonController extends CustomController
             'url_kk' => $kk,
             'url_npwp' => $npwp,
         ];
+
         $this->uploadImage('f_ktp', $ktp, 'ktp');
-        $this->uploadImage('f_npwp', $npwp, 'npwp');
+        if($npwp != ""){
+            $this->uploadImage('f_npwp', $npwp, 'npwp');
+
+        }
         $this->uploadImage('f_kk', $kk, 'kk');
         $this->insert(Pemohon::class, $data);
         return redirect()->back()->with(['success' => 'Success']);
@@ -71,6 +75,8 @@ class PemohonController extends CustomController
                 'saksi' => $this->postField('saksi'),
                 'no_telp' => $this->postField('no_telp'),
             ];
+
+
 
             if ($this->request->hasFile('f_ktp')) {
                 $ktp  = $this->generateImageName('f_ktp');

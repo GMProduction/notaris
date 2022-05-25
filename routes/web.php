@@ -27,12 +27,8 @@ Route::get(
     }
 );
 
-Route::get(
-    '/admin',
-    function () {
-        return view('admin/dashboard');
-    }
-);
+
+Route::get('/admin', 'Admin\PermohonanController@dashboard');
 
 Route::get('/admin/pemohon', 'Admin\PemohonController@index');
 Route::get('/admin/pemohon/{id}', 'Admin\PemohonController@detail');

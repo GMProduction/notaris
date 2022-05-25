@@ -27,6 +27,13 @@ class PermohonanController extends CustomController
         return view('admin.permohonan.permohonan')->with(['permohonan' => $permohonan]);
     }
 
+    public function dashboard()
+    {
+        $permohonan = Permohonan::with(['pemohon'])->get();
+
+        return view('admin.dashboard')->with(['permohonan' => $permohonan]);
+    }
+
     public function addForm()
     {
         $pemohon = Pemohon::all();

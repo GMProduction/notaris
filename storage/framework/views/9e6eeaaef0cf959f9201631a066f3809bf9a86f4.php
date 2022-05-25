@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('content'); ?>
 
     <!-- Header -->
@@ -43,41 +44,37 @@
                                 <th scope="col" class="sort" data-sort="status">Lokasi Tanah</th>
                                 <th scope="col" class="sort" data-sort="status">Status</th>
                                 <th scope="col" class="sort" data-sort="status">Hak Milik</th>
+                                <th scope="col" class="sort" data-sort="status">No. Permohonan</th>
                                 <th scope="col" class="sort" data-sort="status">FIle (Pdf)</th>
 
-                                <th scope="col" class="sort" data-sort="status">Action</th>
+                                <th scope="col" class="sort text-center" data-sort="status" colspan="3">Action</th>
 
                             </tr>
                             </thead>
                             <tbody class="list">
-
+                            <?php $__currentLoopData = $permohonan; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Fernando Tri Nugroho</td>
-                                    <td>Sertifikat tanah</td>
-                                    <td>04 Agustuts 2020</td>
-                                    <td>100 meter</td>
-                                    <td>Surakarta</td>
-                                    <td>Proses 1</td>
-                                    <td>Fernando Tri Nugroho</td>
-                                    <td>file001.pdf</td>
+                                    <td><?php echo e($loop->index + 1); ?></td>
+                                    <td><?php echo e($v->pemohon->nama); ?></td>
+                                    <td><?php echo e($v->nama_dokumen); ?>h</td>
+                                    <td><?php echo e($v->tgl_permohonan); ?></td>
+                                    <td><?php echo e($v->luas_sementara); ?></td>
+                                    <td><?php echo e($v->lokasi); ?></td>
+                                    <td><?php echo e($v->status); ?></td>
+                                    <td><?php echo e($v->hak_milik); ?></td>
+                                    <td><?php echo e($v->no_permohonan); ?></td>
+                                    <td><a href="<?php echo e(asset('/uploads/permohonan')); ?>/<?php echo e($v->url); ?>"><?php echo e($v->url); ?></a></td>
                                     <td>
-                                        <a href="/admin/detailpermohonan" class="btn btn-sm btn-primary">Detail</a>
+                                        <a href="/admin/permohonan/<?php echo e($v->id); ?>" class="btn btn-sm btn-primary">Detail</a>
                                     </td>
-
-
-
-
-
-
-
-
-
-
-
-
+                                    <td>
+                                        <a href="https://wa.me/<?php echo e($v->pemohon->no_telp); ?>?text=Berikut%20ini%20nomor%20dokumen%20Anda%20<?php echo e($v->no_permohonan); ?>" class="btn btn-sm btn-success">Kirim nomor permohonan</a>
+                                    </td>
+                                    <td>
+                                        <a href="/admin/permohonan/edit/<?php echo e($v->id); ?>" class="btn btn-sm btn-warning">Edit</a>
+                                    </td>
                                 </tr>
-
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </tbody>
                         </table>
                     </div>

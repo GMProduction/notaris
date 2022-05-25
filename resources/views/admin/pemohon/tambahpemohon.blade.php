@@ -1,6 +1,6 @@
 @extends('admin.base')
 @section('content')
-    @if(\Illuminate\Support\Facades\Session::has('success'))
+    @if (\Illuminate\Support\Facades\Session::has('success'))
         <script>
             Swal.fire({
                 title: 'Success',
@@ -47,69 +47,61 @@
                                     <div class="col-lg-4">
                                         <div class="form-group">
                                             <label for="namapemohon">Nama Pemohon</label>
-                                            <input type="text" id="namapemohon"  name="nama"
-                                                   class="form-control">
+                                            <input type="text" id="namapemohon" name="nama" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label  for="ktp">KTP</label>
-                                            <input type="text" id="ktp" name="ktp"
-                                                   class="form-control">
+                                            <label for="ktp">KTP</label>
+                                            <input type="text" id="ktp" name="ktp" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label  for="kk">KK</label>
-                                            <input type="text" id="kk" name="kk"
-                                                   class="form-control">
+                                            <label for="kk">KK</label>
+                                            <input type="text" id="kk" name="kk" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label  for="npwp">NPWP</label>
-                                            <input type="text" id="npwp" name="npwp"
-                                                   class="form-control">
+                                            <label for="npwp">NPWP</label>
+                                            <input type="text" id="npwp" name="npwp" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label  for="sppt">SPPT</label>
-                                            <input type="text" id="sppt" name="sppt"
-                                                   class="form-control">
+                                            <label for="sppt">SPPT</label>
+                                            <input type="text" id="sppt" name="sppt" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label  for="noc">No. C</label>
-                                            <input type="text" id="no_c" name="no_c"
-                                                   class="form-control">
+                                            <label for="noc">No. C</label>
+                                            <input type="text" id="no_c" name="no_c" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label  for="saksi">Saksi saksi</label>
-                                            <input type="text" id="saksi" name="saksi"
-                                                   class="form-control">
+                                            <label for="saksi">Saksi saksi</label>
+                                            <input type="text" id="saksi" name="saksi" class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label  for="notelp">No. Telp (62)</label>
-                                            <input type="text" id="no_telp" name="no_telp"
-                                                   class="form-control">
+                                            <label for="notelp">No. Telp (62)</label>
+                                            <input type="text" id="no_telp" name="no_telp" class="form-control">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <hr class="my-4"/>
+                            <hr class="my-4" />
 
                             <h6 class="heading-small text-muted mb-4">Foto</h6>
 
@@ -118,8 +110,7 @@
                                     <a>Foto KTP</a>
                                     <div class="custom-file">
                                         <label class="custom-file-label" for="fotoKtp">Select file</label>
-                                        <input type="file" class="custom-file-input" id="f_ktp"
-                                               name="f_ktp" lang="en">
+                                        <input type="file" class="custom-file-input" id="f_ktp" name="f_ktp" lang="en">
                                     </div>
                                 </div>
                             </div>
@@ -128,8 +119,7 @@
                                     <a>Foto KK</a>
                                     <div class="custom-file">
                                         <label class="custom-file-label" for="fotoKtp">Select file</label>
-                                        <input type="file" class="custom-file-input" id="f_kk"
-                                               name="f_kk" lang="en">
+                                        <input type="file" class="custom-file-input" id="f_kk" name="f_kk" lang="en">
                                     </div>
                                 </div>
                             </div>
@@ -138,14 +128,13 @@
                                     <a>Foto NPWP</a>
                                     <div class="custom-file">
                                         <label class="custom-file-label" for="fotoKtp">Select file</label>
-                                        <input type="file" class="custom-file-input" id="f_npwp"
-                                               name="f_npwp" lang="en">
+                                        <input type="file" class="custom-file-input" id="f_npwp" name="f_npwp" lang="en">
                                     </div>
                                 </div>
 
 
                             </div>
-                            <hr class="my-4"/>
+                            <hr class="my-4" />
 
                             <!-- Description -->
                             <div class="col-12 text-right">
@@ -158,13 +147,7 @@
         </div>
 
     </div>
-
-
-
-
 @endsection
 
 @section('script')
-
-
 @endsection
